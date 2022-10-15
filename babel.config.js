@@ -17,8 +17,7 @@ module.exports = function(api) {
             '@utils': './src/utils'
           }
         }
-      ]
-     
+      ]   
     ]
   };
 };
