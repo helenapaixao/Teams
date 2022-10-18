@@ -1,24 +1,40 @@
 {
-  "extends": "expo/tsconfig.base",
-  "compilerOptions": {
-    "strict": true,
-    "baseUrl": "./",
-    "paths": {
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@routes/*": [
-        "./src/routes/*"
-      ],
-      "@screens/*": [
-        "./src/screens/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ]
+    "extends": "expo/tsconfig.base",
+    "compilerOptions": {
+      "moduleResolution": "node",
+      "target": "es6",
+      "module": "commonjs",
+      "lib": ["esnext"],
+      "strict": true,
+      "sourceMap": true,
+      "declaration": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "declarationDir": "./dist",
+      "outDir": "./dist",
+      "typeRoots": ["node_modules/@types"],
+      "baseUrl": "./",
+      "paths": {
+        "@assets/*": [
+          "./src/assets/*"
+        ],
+        "@components/*": [
+          "./src/components/*"
+        ],
+        "@screens/*": [
+          "./src/screens/*"
+        ],
+        "@storage/*": [
+          "./src/storage/*"
+        ],
+        "@theme/*": [
+          "./src/theme/*"
+        ],
+        "@utils/*": [
+          "./src/utils/*"
+        ]
+      }
     }
   }
-}
