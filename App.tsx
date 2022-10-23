@@ -6,7 +6,7 @@ import {useFonts, Roboto_400Regular, Roboto_700Bold} from '@expo-google-fonts/ro
 import {Loading} from '@components/Loading'
 import theme from "./src/theme";
 
-import NewGroup from "@screens/NewGroup";
+import {Players} from "@screens/Players";
 
 
 export default function App() {
@@ -22,7 +22,7 @@ export default function App() {
       backgroundColor="transparent"
       translucent={true}
       />
-      {fontsLoaded ? <NewGroup/> : <Loading/>}
+      {fontsLoaded ? <Players/> : <Loading/>}
     </ThemeProvider>
   );
 }
