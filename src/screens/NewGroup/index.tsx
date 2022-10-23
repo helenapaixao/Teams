@@ -16,7 +16,9 @@ export default function NewGroup() {
           subtitle="Crie uma turma para começar a compartilhar seus códigos"
         />
 
-        <Input />
+        <Input 
+        placeholder="Nome da turma"
+        />
         <Button title="Criar turma"
         style={{ marginTop: 10}}
         
