@@ -37,6 +37,14 @@ export function Players() {
           {players.length} {players.length === 1 ? "jogador" : "jogadores"}
         </NumberOfPlayers>
       </HeaderList>
+      <FlatList
+      data={players}
+      keyExtractor={(item) => item}
+      renderItem={({item}) => (
+        <PlayerCard name={item} />
+      )}
+      
+      />
     </Container>
   );
 }
