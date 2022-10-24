@@ -8,6 +8,7 @@ import { Input } from "@components/Input";
 import { PlayerCard } from "@components/PlayerCard";
 
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
+import { ListEmpty } from "@components/ListEmpty";
 
 export function Players() {
   const [team, setTeam] = useState("Time A");
@@ -42,6 +43,10 @@ export function Players() {
         keyExtractor={(item) => item}
         renderItem={({ item }) => (
           <PlayerCard name={item} onRemove={() => {}} />
+        )}
+        ListEmptyComponent={() => (
+          <ListEmpty message="Nenhum jogador encontrado" />
+          
         )}
       />
     </Container>
