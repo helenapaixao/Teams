@@ -1,10 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { FlatList } from "react-native";
 import { Header } from "@components/Header";
 import { Highlight } from "@components/Highlight";
 import { ButtonIcon } from "@components/ButtonIcon";
 import { Filter } from "@components/Filter";
 import { Input } from "@components/Input";
+import { PlayerCard } from "@components/PlayerCard";
 
 
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
