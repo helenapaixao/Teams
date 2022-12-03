@@ -18,7 +18,7 @@ export default function App() {
   });
 
   return (
-    <NavigationContainer>
+    <NavigationContainer >
       <ThemeProvider theme={theme}>
         <StatusBar
           barStyle="light-content"
