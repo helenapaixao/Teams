@@ -9,7 +9,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Loading } from "@components/Loading";
 import theme from "./src/theme";
 
-import { Players } from "@screens/Players";
+import {Routes} from "./src/routes";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -25,7 +25,7 @@ export default function App() {
           backgroundColor="transparent"
           translucent={true}
         />
-        {fontsLoaded ? <Players /> : <Loading />}
+        {fontsLoaded ? <Routes /> : <Loading />}
       </ThemeProvider>
     </NavigationContainer>
   );
