@@ -6,6 +6,8 @@ import { Button } from "@components/Button";
 import { Input } from "@components/Input";
 import { useNavigation } from "@react-navigation/native";
 import { groupCreate } from "@storage/group/groupCreate";
+import { AppError } from "@utils/AppError";
+import { Alert } from "react-native";
 
 export default function NewGroup() {
   const [groupName, setGroupName] = useState("");
@@ -18,7 +20,12 @@ export default function NewGroup() {
         group: groupName,
       });
     } catch (error) {
-      console.log(error);
+      if (error instanceof AppError) {
+        Alert.alert("Novo Grupo", error.message);
+      } else {
+        Alert.alert("Novo Grupo", "Não possivel criar um novo grupo");
+        console.log(error);
+      }
     }
   }
 
