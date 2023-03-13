@@ -19,6 +19,7 @@ import { ListEmpty } from '@components/ListEmpty';
 import { Button } from '@components/Button';
 
 import { Container, Form, HeaderList, NumberOfPlayers } from "./styles";
+import { groupRemoveByName } from '@storage/group/groupRemoveByName';
 
 type RouteParams = {
   group: string;
@@ -81,6 +82,27 @@ export function Players() {
       console.log(error);
       Alert.alert('Remover pessoa', 'Não foi possível remover a pessoa.');
     }
+  }
+
+  async function handleRemoveGroup() {
+    Alert.alert(
+      'Remover',
+      "Deseja remover a turma?",
+      [
+        {
+          text: 'Não', style: 'cancel'},
+          {
+            text: 'Sim', onPress: async () => {
+              try {
+                await groupRemoveByName(group);
+              } catch (error) {
+                console.log(error);
+                Alert.alert('Remover turma', 'Não foi possível remover a turma.');
+              }
+            }
+          }
+      ]
+    )
   }
 
   useEffect(() => {
@@ -151,6 +173,9 @@ export function Players() {
       <Button 
         title="Remover Turma"
         type="SECONDARY"
+        onPress={() => handleRemoveGroup(
+          
+        )}
       />
     </Container>
   )
