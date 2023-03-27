@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { FlatList } from "react-native";
+import { Alert, FlatList } from "react-native";
 import { useNavigation, useFocusEffect } from "@react-navigation/native";
 
 import { Container } from "./styles";
@@ -11,6 +11,7 @@ import { Button } from "@components/Button";
 import { groupsGetAll } from "@storage/group/groupsGetAll";
 
 export default function Groups() {
+  const [isLoading, setIsLoading] = useState(true)
   const [groups, setGroups] = useState<string[]>([]);
   const navigation = useNavigation();
 
@@ -20,10 +21,14 @@ export default function Groups() {
 
   async function fetchGroups() {
     try {
+      setIsLoading(true);
       const data = await groupsGetAll();
       setGroups(data);
     } catch (error) {
       console.log(error);
+      Alert.alert('Turmas', "Não foi possivel carregar as turmas")
+    } finally {
+      setIsLoading(false)
     }
   }
 
